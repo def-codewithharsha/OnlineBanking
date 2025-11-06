@@ -19,13 +19,13 @@ class LoginPage:
             self.show_homepage=UserSession(self.username,self.bankdatabase)
             self.show_homepage.show_dashboard()
         else:
-            self.failed_attempt+=1
-            self.block_user(self.attempt_count)
+            self.failed_attempt=+1
+            self.block_user()
             print("Please enter correct creds")
 
     def block_user(self):
         attempts=3
-        if self.failed_count > attempts:
+        if self.failed_attempt > attempts:
             print("You Have Blocked for 24 hours") #block user for 24 hours
             #create a new data table for login and log out timings and checking user account status
 
